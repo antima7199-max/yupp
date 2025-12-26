@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aadi 💖</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  overflow:hidden;
+}
+
+/* COMMON PAGE STYLE */
+.page{
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  color:white;
+  transition:transform 1s ease-in-out;
+}
+
+/* BRIGHT & ELEGANT BACKGROUNDS */
+.bg1{ background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb); }
+.bg2{ background:linear-gradient(135deg,#a18cd1,#fbc2eb,#fad0c4); }
+.bg3{ background:linear-gradient(135deg,#ffecd2,#fcb69f,#ff9a9e); }
+.bg4{ background:linear-gradient(135deg,#89f7fe,#66a6ff,#a1c4fd); }
+
+/* TEXT */
+h1{
+  font-size:3rem;
+  animation:fadeUp 2s ease;
+}
+
+p{
+  font-size:1.4rem;
+  max-width:850px;
+  margin-top:20px;
+  line-height:1.8;
+  animation:fadeUp 3s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* BUTTON */
+button{
+  margin-top:40px;
+  padding:14px 36px;
+  font-size:1rem;
+  border:none;
+  border-radius:40px;
+  background:white;
+  color:#ff5f9e;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+  100%{transform:scale(1);}
+}
+
+/* IMAGE */
+.profile-img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid white;
+  box-shadow:0 0 40px rgba(255,255,255,0.9);
+  animation:zoomIn 2s ease;
+  margin-bottom:25px;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0);}
+  to{transform:scale(1);}
+}
+
+/* INITIAL HIDE */
+#page2,#page3,#page4{
+  transform:translateX(100%);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="music/happy-birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page bg1" id="page1">
+  <h1>Happy Birthday Aadi 🎂</h1>
+  <p>
+    Aaj nahi likhungi tareekh ya saal,<br>
+    Aaj bas dil bolega… kyunki aaj khaas ho tum 💖<br><br>
+    Tumhara hona hi mere liye ek jashn hai ✨
+  </p>
+  <button onclick="go(2)">Next ➤</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page bg2" id="page2">
+  <img src="images/aadi.jpg" class="profile-img">
+  <h1>Someone Truly Special 🌸</h1>
+  <p>
+    Kuch log zindagi mein aate nahi,<br>
+    Balki dil mein bas jaate hain…<br><br>
+    Aur tum unhi mein se ek ho 💫
+  </p>
+  <button onclick="go(3)">Next ➤</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page bg3" id="page3">
+  <h1>Why You Mean So Much 💞</h1>
+  <p>
+    Tumhari muskaan meri taaqat hai,<br>
+    Tumhari baaton mein sukoon hai…<br><br>
+    Tum saath ho to har din khoobsurat lagta hai 🌷
+  </p>
+  <button onclick="go(4)">Next ➤</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page bg4" id="page4">
+  <h1>Always You 🤍</h1>
+  <p>
+    Is janmdin par bas ek dua hai,<br>
+    Tumhari har subah muskaan se bhari ho,<br>
+    Har sapna poora ho,<br><br>
+    Aur meri har khushi mein tum shaamil raho 💕<br><br>
+    Happy Birthday Aadi 🎉
+  </p>
+</div>
+
+<script>
+function go(n){
+  document.getElementById("page"+(n-1)).style.transform="translateX(-100%)";
+  document.getElementById("page"+n).style.transform="translateX(0)";
+}
+</script>
+
+</body>
+</html>
